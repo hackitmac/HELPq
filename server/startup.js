@@ -13,7 +13,6 @@ Meteor.startup(function(){
       secret: process.env.GITHUB_SECRET
     }
   }
-  console.log(config.GITHUB.clientId)
   if ((process.env.FACEBOOK === true) && process.env.FACEBOOK_APPID && process.env.FACEBOOK_SECRET){
     config.facebook = {
       enable: true,
