@@ -7,15 +7,15 @@ Meteor.startup(function(){
     config.admin.password = process.env.ADMIN_PASSWORD
   }
   
-  if (process.env.GITHUB === 1) {
+  if (process.env.GITHUB === 'true') {
     console.log("yes")
-  } else if (process.env.GITHUB == 1) {
+  } else if (process.env.GITHUB == 'true') {
     console.log("ish")
   } else {
     console.log("no")
   }
   
-  if ((process.env.GITHUB === 1) && process.env.GITHUB_CLIENTID && process.env.GITHUB_SECRET){
+  if ((process.env.GITHUB == 'true') && process.env.GITHUB_CLIENTID && process.env.GITHUB_SECRET){
     config.github = {
       'enable': true,
       'clientId': process.env.GITHUB_CLIENTID,
