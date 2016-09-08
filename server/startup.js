@@ -8,12 +8,16 @@ Meteor.startup(function(){
   }
   console.log("git")
   console.log(process.env.GITHUB)
-  console.log("client")
-  console.log(process.env.GITHUB_CLIENTID)
+  if (process.env.GITHUB_CLIENTID) {
+    console.log("client")
+  } else {
+    console.log("no client")
+  }
+  
+  
   if (process.env.GITHUB_SECRET) {
     console.log("secret")
-  }
-  else {
+  } else {
     console.log("no secret")
   }
   
@@ -23,6 +27,7 @@ Meteor.startup(function(){
       'clientId': process.env.GITHUB_CLIENTID,
       'secret': process.env.GITHUB_SECRET
     }
+    console.log("enter")
   }
   if ((process.env.FACEBOOK === true) && process.env.FACEBOOK_APPID && process.env.FACEBOOK_SECRET){
     config.facebook = {
