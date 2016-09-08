@@ -6,19 +6,13 @@ Meteor.startup(function(){
   if (process.env.ADMIN_PASSWORD) {
     config.admin.password = process.env.ADMIN_PASSWORD
   }
-  console.log("git")
-  console.log(process.env.GITHUB)
-  if (process.env.GITHUB_CLIENTID) {
-    console.log("client")
-  } else {
-    console.log("no client")
-  }
   
-  
-  if (process.env.GITHUB_SECRET) {
-    console.log("secret")
+  if (process.env.GITHUB === true) {
+    console.log("yes")
+  } else if (process.env.GITHUB == true) {
+    console.log("ish")
   } else {
-    console.log("no secret")
+    console.log("no")
   }
   
   if ((process.env.GITHUB === true) && process.env.GITHUB_CLIENTID && process.env.GITHUB_SECRET){
